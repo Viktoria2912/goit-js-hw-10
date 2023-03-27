@@ -1,5 +1,4 @@
 const BASE_URL = 'https://restcountries.com/v3.1/name/';
-
 const fields = 'fields=name,capital,population,flags,languages';
 
 export function fetchCountries(name) {
@@ -7,3 +6,8 @@ export function fetchCountries(name) {
     .then(response => response.json())
     .catch(error => console.log(error));
 }
+
+const corsOptions = {
+  origin: 'https://restcountries.com/v3.1/name/',
+};
+app.use(cors(corsOptions));
